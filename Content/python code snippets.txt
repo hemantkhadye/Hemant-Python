@@ -1,0 +1,8 @@
+//proxy code with username password
+proxy_support = urllib.request.ProxyHandler({'http' : 'https://csimonra:h19VA2xZ@173.228.169.137:29842', 
+                                             'https': 'https://csimonra:h19VA2xZ@173.228.169.148:29842'})
+opener = urllib.request.build_opener(proxy_support)
+urllib.request.install_opener(opener)
+
+response= urllib.request.urlopen("https://www.qoo10.sg/").read().decode('utf-8') 
+print(response)
